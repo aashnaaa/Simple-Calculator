@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .calculator {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .display {
+            font-size: 2em;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: right;
+            background-color: #f9f9f9;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .button {
+            padding: 20px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 5px;
+            background-color: #eee;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .button:hover {
+            background-color: #ddd;
+        }
+        .button:active {
+            background-color: #ccc;
+        }
+        .button.operator {
+            background-color: #f9a825;
+            color: white;
+        }
+        .button.operator:hover {
+            background-color: #f57f17;
+        }
+        .button.operator:active {
+            background-color: #ef6c00;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="button" id="btn-1" onclick="appendNumber('1')">1</button>
+            <button class="button" id="btn-2" onclick="appendNumber('2')">2</button>
+            <button class="button" id="btn-3" onclick="appendNumber('3')">3</button>
+            <button class="button operator" id="btn-add" onclick="chooseOperation('+')">+</button>
+            <button class="button" id="btn-4" onclick="appendNumber('4')">4</button>
+            <button class="button" id="btn-5" onclick="appendNumber('5')">5</button>
+            <button class="button" id="btn-6" onclick="appendNumber('6')">6</button>
+            <button class="button operator" id="btn-subtract" onclick="chooseOperation('-')">-</button>
+            <button class="button" id="btn-7" onclick="appendNumber('7')">7</button>
+            <button class="button" id="btn-8" onclick="appendNumber('8')">8</button>
+            <button class="button" id="btn-9" onclick="appendNumber('9')">9</button>
+            <button class="button operator" id="btn-multiply" onclick="chooseOperation('*')">x</button>
+            <button class="button" id="btn-0" onclick="appendNumber('0')">0</button>
+            <button class="button" id="btn-clear" onclick="clearDisplay()">C</button>
+            <button class="button operator" id="btn-equals" onclick="compute()">=</button>
+            <button class="button operator" id="btn-divide" onclick="chooseOperation('/')">÷</button>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
